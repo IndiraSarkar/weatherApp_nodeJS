@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const fetch = require('node-fetch')
 
+const port = process.env.PORT || 3000
 
 // Define paths for Express config
 const publicDirPath = path.join(__dirname, '../public')
@@ -73,8 +74,8 @@ app.get('*', (req, res) => {
     res.send('<h1>404: Page not found!!</h1>')
 })
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port '+port)
 })
 
 // const weatherForm = document.querySelector('form')
